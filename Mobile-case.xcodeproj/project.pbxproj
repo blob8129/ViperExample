@@ -24,6 +24,12 @@
 		CEE662DE1E4D7BD000C9913A /* RecipeSearchPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662DD1E4D7BD000C9913A /* RecipeSearchPresenterInput.swift */; };
 		CEE662E11E4D90CD00C9913A /* RecipeSearchInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662E01E4D90CD00C9913A /* RecipeSearchInteractorInput.swift */; };
 		CEE662E31E4D918600C9913A /* RecipeSearchInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662E21E4D918600C9913A /* RecipeSearchInteractorOutput.swift */; };
+		CEE662E71E4D940900C9913A /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662E61E4D940900C9913A /* URLs.swift */; };
+		CEE662E91E4D941200C9913A /* URLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662E81E4D941200C9913A /* URLProvider.swift */; };
+		CEE662EB1E4D94E400C9913A /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662EA1E4D94E400C9913A /* URLBuilder.swift */; };
+		CEE662EE1E4D9D7C00C9913A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662ED1E4D9D7C00C9913A /* NetworkManager.swift */; };
+		CEE662F11E4DA25A00C9913A /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662F01E4DA25A00C9913A /* URLSessionMock.swift */; };
+		CEE662F31E4DAD6900C9913A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662F21E4DAD6900C9913A /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +64,12 @@
 		CEE662DD1E4D7BD000C9913A /* RecipeSearchPresenterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSearchPresenterInput.swift; sourceTree = "<group>"; };
 		CEE662E01E4D90CD00C9913A /* RecipeSearchInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSearchInteractorInput.swift; sourceTree = "<group>"; };
 		CEE662E21E4D918600C9913A /* RecipeSearchInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSearchInteractorOutput.swift; sourceTree = "<group>"; };
+		CEE662E61E4D940900C9913A /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		CEE662E81E4D941200C9913A /* URLProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProvider.swift; sourceTree = "<group>"; };
+		CEE662EA1E4D94E400C9913A /* URLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
+		CEE662ED1E4D9D7C00C9913A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CEE662F01E4DA25A00C9913A /* URLSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		CEE662F21E4DAD6900C9913A /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +125,7 @@
 		CEE662B41E4D6DBC00C9913A /* Mobile-caseTests */ = {
 			isa = PBXGroup;
 			children = (
+				CEE662EF1E4DA22800C9913A /* Mock */,
 				CEE662B51E4D6DBC00C9913A /* Mobile_caseTests.swift */,
 				CEE662B71E4D6DBC00C9913A /* Info.plist */,
 			);
@@ -186,6 +199,7 @@
 		CEE662C71E4D727800C9913A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CEE662E41E4D93ED00C9913A /* Services */,
 				CEE662C81E4D727F00C9913A /* RouterProtocols */,
 			);
 			name = Common;
@@ -207,6 +221,42 @@
 				CEE662A01E4D6DBC00C9913A /* AppDelegate.swift */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		CEE662E41E4D93ED00C9913A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662EC1E4D9AE300C9913A /* API */,
+				CEE662E51E4D93FE00C9913A /* URL */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		CEE662E51E4D93FE00C9913A /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662EA1E4D94E400C9913A /* URLBuilder.swift */,
+				CEE662E81E4D941200C9913A /* URLProvider.swift */,
+				CEE662E61E4D940900C9913A /* URLs.swift */,
+			);
+			name = URL;
+			sourceTree = "<group>";
+		};
+		CEE662EC1E4D9AE300C9913A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662ED1E4D9D7C00C9913A /* NetworkManager.swift */,
+				CEE662F21E4DAD6900C9913A /* NetworkError.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		CEE662EF1E4DA22800C9913A /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662F01E4DA25A00C9913A /* URLSessionMock.swift */,
+			);
+			name = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,9 +363,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE662F31E4DAD6900C9913A /* NetworkError.swift in Sources */,
+				CEE662E91E4D941200C9913A /* URLProvider.swift in Sources */,
 				CEE662DC1E4D7B6500C9913A /* RecipeSearchInteractor.swift in Sources */,
+				CEE662E71E4D940900C9913A /* URLs.swift in Sources */,
 				CEE662CF1E4D730000C9913A /* RecipeSearchRouter.swift in Sources */,
+				CEE662EE1E4D9D7C00C9913A /* NetworkManager.swift in Sources */,
 				CEE662CC1E4D72C000C9913A /* ViewControllerTypeProtocol.swift in Sources */,
+				CEE662EB1E4D94E400C9913A /* URLBuilder.swift in Sources */,
 				CEE662A31E4D6DBC00C9913A /* ViewController.swift in Sources */,
 				CEE662D31E4D73FE00C9913A /* RecipeSearchTVC.swift in Sources */,
 				CEE662D91E4D7B5100C9913A /* RecipeSearchPresenter.swift in Sources */,
@@ -332,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE662F11E4DA25A00C9913A /* URLSessionMock.swift in Sources */,
 				CEE662B61E4D6DBC00C9913A /* Mobile_caseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
