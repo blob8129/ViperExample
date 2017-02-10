@@ -16,38 +16,37 @@ enum DataResult {
 
 struct NetworkManager {
     
-    let callBack: (DataResult) -> ()
+  //  let callBack: (DataResult) -> ()
     let session: URLSession
     
-    func loadData(url: URL) {
+    func loadData(url: URL, callBack: @escaping (DataResult) -> () ) {
     
         let task = session.dataTask(with: url) { data, response, error in
             guard let data = data, let response = response else {
-                self.callBack(DataResult.error(
+                callBack(DataResult.error(
                     .unknown
                 ))
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse else {
-                self.callBack(DataResult.error(
+                callBack(DataResult.error(
                     .nonHTTPResponse(response: response)
                 ))
                 return
             }
             guard 200..<300 ~= httpResponse.statusCode else {
-                self.callBack(DataResult.error(
+                callBack(DataResult.error(
                     .httpRequestFailed(response: httpResponse, data: data)
                 ))
                 return
             }
-            self.callBack(DataResult.sucess(data: data))
+            callBack(DataResult.sucess(data: data))
         }
         task.resume()
     }
     
-    init(session: URLSession = URLSession.shared,
-         callBack:  @escaping (DataResult) -> ()) {
+    init(session: URLSession = URLSession.shared) {
         self.session = session
-        self.callBack = callBack
+      //  self.callBack = callBack
     }
 }

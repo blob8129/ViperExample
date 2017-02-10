@@ -30,6 +30,7 @@
 		CEE662EE1E4D9D7C00C9913A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662ED1E4D9D7C00C9913A /* NetworkManager.swift */; };
 		CEE662F11E4DA25A00C9913A /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662F01E4DA25A00C9913A /* URLSessionMock.swift */; };
 		CEE662F31E4DAD6900C9913A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662F21E4DAD6900C9913A /* NetworkError.swift */; };
+		CEE662F51E4DB13B00C9913A /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662F41E4DB13B00C9913A /* RecipeService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		CEE662ED1E4D9D7C00C9913A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CEE662F01E4DA25A00C9913A /* URLSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		CEE662F21E4DAD6900C9913A /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		CEE662F41E4DB13B00C9913A /* RecipeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,8 +247,9 @@
 		CEE662EC1E4D9AE300C9913A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				CEE662F61E4DB14A00C9913A /* Errors */,
 				CEE662ED1E4D9D7C00C9913A /* NetworkManager.swift */,
-				CEE662F21E4DAD6900C9913A /* NetworkError.swift */,
+				CEE662F41E4DB13B00C9913A /* RecipeService.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -257,6 +260,14 @@
 				CEE662F01E4DA25A00C9913A /* URLSessionMock.swift */,
 			);
 			name = Mock;
+			sourceTree = "<group>";
+		};
+		CEE662F61E4DB14A00C9913A /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662F21E4DAD6900C9913A /* NetworkError.swift */,
+			);
+			name = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +387,7 @@
 				CEE662D91E4D7B5100C9913A /* RecipeSearchPresenter.swift in Sources */,
 				CEE662A11E4D6DBC00C9913A /* AppDelegate.swift in Sources */,
 				CEE662E31E4D918600C9913A /* RecipeSearchInteractorOutput.swift in Sources */,
+				CEE662F51E4DB13B00C9913A /* RecipeService.swift in Sources */,
 				CEE662D51E4D744200C9913A /* StroyboardInstantiatable.swift in Sources */,
 				CEE662E11E4D90CD00C9913A /* RecipeSearchInteractorInput.swift in Sources */,
 				CEE662DE1E4D7BD000C9913A /* RecipeSearchPresenterInput.swift in Sources */,

@@ -56,54 +56,55 @@ class Mobile_caseTests: XCTestCase {
     
     func testNetworkManagerUnknownError() {
         let session = URLSessionMock(data: nil, response: nil, error: nil)
-        let manager = NetworkManager(session: session) { result in
+        let manager = NetworkManager(session: session)
+        manager.loadData(url: URL(string: "http://abc.efd")!) { result in
             switch result {
             case .sucess(_):
                 XCTFail()
             case .error(let error):
                 XCTAssertEqual(error, .unknown,
-                          "Should be unknown error")
+                               "Should be unknown error")
             }
         }
-        manager.loadData(url: URL(string: "http://aaa.bcd")!)
     }
     
     func testNetworkManagerNonHttpError() {
         let data = Data()
         let response = URLResponse()
         let session = URLSessionMock(data: data, response: response, error: nil)
-        let manager = NetworkManager(session: session) { result in
+        let manager = NetworkManager(session: session)
+        manager.loadData(url: URL(string:  "http://abc.efd")!) { result in
             switch result {
             case .sucess(_):
                 XCTFail()
             case .error(let error):
                 XCTAssertEqual(error, .nonHTTPResponse(response: response),
-                          "Should be nonHTTPResponse error")
+                               "Should be nonHTTPResponse error")
             }
         }
-        manager.loadData(url: URL(string: "http://aaa.bcd")!)
     }
     
     func testNetworkManagerHttpRequestFailed() {
         let httpStatusCode = 400
         let data = Data()
-        let response = HTTPURLResponse(url:  URL(string: "http://aaa.bcd")!,
+        let response = HTTPURLResponse(url:  URL(string: "http://abc.efd")!,
                                        statusCode: httpStatusCode,
                                        httpVersion: nil,
                                        headerFields: nil)
 
         let session = URLSessionMock(data: data, response: response, error: nil)
-        let manager = NetworkManager(session: session) { result in
+        let manager = NetworkManager(session: session)
+        
+        manager.loadData(url: URL(string: "http://abc.efd")!) { result in
             switch result {
             case .sucess(_):
                 XCTFail()
             case .error(let error):
                 XCTAssertEqual(error,
                                NetworkError.httpRequestFailed(response: response!, data: data),
-                          "Should be httpRequestFailed error")
+                               "Should be httpRequestFailed error")
             }
         }
-        manager.loadData(url: URL(string: "http://aaa.bcd")!)
     }
     
     func testNetworkManagerSucess() {
@@ -115,7 +116,9 @@ class Mobile_caseTests: XCTestCase {
                                        headerFields: nil)
         
         let session = URLSessionMock(data: data, response: response, error: nil)
-        let manager = NetworkManager(session: session) { result in
+        let manager = NetworkManager(session: session)
+        
+        manager.loadData(url: URL(string: "http://abc.efd")!) { result in
             switch result {
             case .sucess(let data):
                 XCTAssertEqual(data, data, "Should be success")
@@ -123,7 +126,7 @@ class Mobile_caseTests: XCTestCase {
                 XCTFail()
             }
         }
-        manager.loadData(url: URL(string: "http://aaa.bcd")!)
+
     }
     
     func testRecipeSearchPresenterAssembled() {

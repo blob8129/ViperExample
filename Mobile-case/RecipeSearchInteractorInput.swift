@@ -10,5 +10,6 @@ import Foundation
 
 
 protocol RecipeSearchInteractorInput {
-
+    func loadRecipes(term: String)
+    func loadNextPage(term: String)
 }
