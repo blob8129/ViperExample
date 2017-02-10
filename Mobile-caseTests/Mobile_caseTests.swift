@@ -21,16 +21,16 @@ class Mobile_caseTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testRecipeSearchVievControllerIsInstantiated() {
+        let vc = RecipeSearchRouter().viewController
+        XCTAssert(vc != nil,
+                  "View controller is not instantiated form storyboard ")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testRecipeSearchPresenterAssembled() {
+        let presenter = RecipeSearchRouter().viewController?.presenter
+        XCTAssert(presenter != nil,
+                  "Presenter not assembled")
     }
     
 }
