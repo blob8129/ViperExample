@@ -31,6 +31,11 @@
 		CEE662F11E4DA25A00C9913A /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662F01E4DA25A00C9913A /* URLSessionMock.swift */; };
 		CEE662F31E4DAD6900C9913A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662F21E4DAD6900C9913A /* NetworkError.swift */; };
 		CEE662F51E4DB13B00C9913A /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662F41E4DB13B00C9913A /* RecipeService.swift */; };
+		CEE662FC1E50099500C9913A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662FB1E50099500C9913A /* Recipe.swift */; };
+		CEE662FE1E500A9700C9913A /* JSONCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662FD1E500A9700C9913A /* JSONCreatable.swift */; };
+		CEE663001E500B3300C9913A /* SerializationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662FF1E500B3300C9913A /* SerializationError.swift */; };
+		CEE663041E500D3100C9913A /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE663031E500D3100C9913A /* Page.swift */; };
+		CEE663061E500E2400C9913A /* Resourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE663051E500E2300C9913A /* Resourse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,11 @@
 		CEE662F01E4DA25A00C9913A /* URLSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		CEE662F21E4DAD6900C9913A /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		CEE662F41E4DB13B00C9913A /* RecipeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
+		CEE662FB1E50099500C9913A /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		CEE662FD1E500A9700C9913A /* JSONCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONCreatable.swift; sourceTree = "<group>"; };
+		CEE662FF1E500B3300C9913A /* SerializationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationError.swift; sourceTree = "<group>"; };
+		CEE663031E500D3100C9913A /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		CEE663051E500E2300C9913A /* Resourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resourse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +125,7 @@
 			children = (
 				CEE662D61E4D74B900C9913A /* Application */,
 				CEE662C01E4D6E8900C9913A /* Modules */,
+				CEE662FA1E50097000C9913A /* Model */,
 				CEE662A21E4D6DBC00C9913A /* ViewController.swift */,
 				CEE662A41E4D6DBC00C9913A /* Main.storyboard */,
 				CEE662A71E4D6DBC00C9913A /* Assets.xcassets */,
@@ -270,6 +281,34 @@
 			name = Errors;
 			sourceTree = "<group>";
 		};
+		CEE662FA1E50097000C9913A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEE663021E500B7D00C9913A /* Protocols */,
+				CEE663011E500B6F00C9913A /* Errors */,
+				CEE662FB1E50099500C9913A /* Recipe.swift */,
+				CEE663031E500D3100C9913A /* Page.swift */,
+				CEE663051E500E2300C9913A /* Resourse.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CEE663011E500B6F00C9913A /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662FF1E500B3300C9913A /* SerializationError.swift */,
+			);
+			name = Errors;
+			sourceTree = "<group>";
+		};
+		CEE663021E500B7D00C9913A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662FD1E500A9700C9913A /* JSONCreatable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -380,6 +419,7 @@
 				CEE662E71E4D940900C9913A /* URLs.swift in Sources */,
 				CEE662CF1E4D730000C9913A /* RecipeSearchRouter.swift in Sources */,
 				CEE662EE1E4D9D7C00C9913A /* NetworkManager.swift in Sources */,
+				CEE663041E500D3100C9913A /* Page.swift in Sources */,
 				CEE662CC1E4D72C000C9913A /* ViewControllerTypeProtocol.swift in Sources */,
 				CEE662EB1E4D94E400C9913A /* URLBuilder.swift in Sources */,
 				CEE662A31E4D6DBC00C9913A /* ViewController.swift in Sources */,
@@ -389,8 +429,12 @@
 				CEE662E31E4D918600C9913A /* RecipeSearchInteractorOutput.swift in Sources */,
 				CEE662F51E4DB13B00C9913A /* RecipeService.swift in Sources */,
 				CEE662D51E4D744200C9913A /* StroyboardInstantiatable.swift in Sources */,
+				CEE662FE1E500A9700C9913A /* JSONCreatable.swift in Sources */,
 				CEE662E11E4D90CD00C9913A /* RecipeSearchInteractorInput.swift in Sources */,
+				CEE662FC1E50099500C9913A /* Recipe.swift in Sources */,
+				CEE663001E500B3300C9913A /* SerializationError.swift in Sources */,
 				CEE662DE1E4D7BD000C9913A /* RecipeSearchPresenterInput.swift in Sources */,
+				CEE663061E500E2400C9913A /* Resourse.swift in Sources */,
 				CEE662CA1E4D729D00C9913A /* Navigatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +574,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Mobile-case/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Mobile-case";
@@ -543,6 +588,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Mobile-case/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DRELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Mobile-case";

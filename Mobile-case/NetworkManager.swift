@@ -10,13 +10,12 @@ import Foundation
 
 
 enum DataResult {
-    case sucess(data: Data)
+    case sucess(data: Data, url: URL)
     case error(NetworkError)
 }
 
 struct NetworkManager {
     
-  //  let callBack: (DataResult) -> ()
     let session: URLSession
     
     func loadData(url: URL, callBack: @escaping (DataResult) -> () ) {
@@ -40,13 +39,12 @@ struct NetworkManager {
                 ))
                 return
             }
-            callBack(DataResult.sucess(data: data))
+            callBack(DataResult.sucess(data: data, url: url))
         }
         task.resume()
     }
     
     init(session: URLSession = URLSession.shared) {
         self.session = session
-      //  self.callBack = callBack
     }
 }

@@ -120,8 +120,9 @@ class Mobile_caseTests: XCTestCase {
         
         manager.loadData(url: URL(string: "http://abc.efd")!) { result in
             switch result {
-            case .sucess(let data):
+            case .sucess(let data, let url):
                 XCTAssertEqual(data, data, "Should be success")
+                XCTAssertEqual(url, url, "Should be success")
             case .error(_):
                 XCTFail()
             }

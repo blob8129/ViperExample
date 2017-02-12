@@ -15,7 +15,7 @@ struct RecipeService {
     
     let networkManager = NetworkManager()
     
-    func searchForRecipe(term: String, page: Int) {
+    func searchForRecipe(term: String, page: Int, callBack: @escaping (DataResult) -> ()) {
         let baseUrl = URLs.searchFood.getURL()
         let url = URLBuilder(url: baseUrl)
             .with(key: key)
@@ -23,8 +23,6 @@ struct RecipeService {
             .with(page: page)
             .url
         
-        networkManager.loadData(url: url) { result in
-        
-        }
+        networkManager.loadData(url: url, callBack: callBack)
     }
 }

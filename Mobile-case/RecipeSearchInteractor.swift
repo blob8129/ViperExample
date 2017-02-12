@@ -16,12 +16,20 @@ final class RecipeSearchInteractor {
 }
 
 extension RecipeSearchInteractor: RecipeSearchInteractorInput {
-    func loadRecipes(term: String) {
+    
+    func loadRecipes(for term: String) {
         page = 0
-        recipeService.searchForRecipe(term: term, page: page)
+        recipeService.searchForRecipe(term: term, page: page) { result in
+        
+        }
     }
     
-    func loadNextPage(term: String) {
-        recipeService.searchForRecipe(term: term, page: page + 1)
+    func loadNextPage(for term: String) {
+        page += 1
+        recipeService.searchForRecipe(term: term, page: page) { result in
+
+        }
     }
 }
+
+

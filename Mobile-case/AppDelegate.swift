@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-        #if RELEASE
+        
+     //   #if RELEASE
         let rootNavigationController = UINavigationController()
         let recipeSearchRouter = RecipeSearchRouter()
         recipeSearchRouter.navigationController = rootNavigationController
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()
-        #endif
+      //  #endif
         
         return true
     }

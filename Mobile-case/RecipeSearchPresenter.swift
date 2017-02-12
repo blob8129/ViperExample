@@ -9,11 +9,17 @@
 import Foundation
 
 
-final class RecipeSearchPresenter: RecipeSearchPresenterInput {
+final class RecipeSearchPresenter {
     let intractor: RecipeSearchInteractorInput
     
     init(interactor: RecipeSearchInteractorInput) {
         self.intractor = interactor
+    }
+}
+
+extension RecipeSearchPresenter: RecipeSearchPresenterInput {
+    func searchTermChanged(to term: String) {
+        intractor.loadRecipes(for: term)
     }
 }
 

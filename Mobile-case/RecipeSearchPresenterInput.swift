@@ -9,5 +9,5 @@
 import Foundation
 
 protocol RecipeSearchPresenterInput {
-
+    func searchTermChanged(to term: String)
 }
