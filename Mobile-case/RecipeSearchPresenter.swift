@@ -6,12 +6,15 @@
 //  Copyright © 2017 test. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 final class RecipeSearchPresenter {
     var recipes = [Recipe]()
+    var imagesDict = [URL: (index: Int, image: UIImage?)]()
     
+    private let debounceInterval = 1.0
+    fileprivate var currentTerm = ""
     weak var view: RecipeSearchPresenterOutput?
     fileprivate let intractor: RecipeSearchInteractorInput
     private var timer: Timer?
@@ -22,7 +25,7 @@ final class RecipeSearchPresenter {
     
     fileprivate func debounceAndSerch(term: String) {
         timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 1.0,
+        timer = Timer.scheduledTimer(timeInterval: debounceInterval,
                                      target: self,
                                      selector: #selector(searchTermDebounced),
                                      userInfo: term,
@@ -35,9 +38,13 @@ final class RecipeSearchPresenter {
             let term = userInfo as? String else {
             return
         }
-        print("Timer for \(term)")
         intractor.loadRecipes(for: term)
-        
+    }
+    
+    fileprivate func configureImages(for recipes: [Recipe]) {
+        self.recipes.enumerated().forEach { offset, recipe in
+            imagesDict[recipe.imageUrl] = (offset, imagesDict[recipe.imageUrl]?.image)
+        }
     }
 }
 
@@ -59,18 +66,54 @@ extension RecipeSearchPresenter: RecipeSearchPresenterInput {
         return recipes[row].title
     }
     
+    func willDisplayCellFor(row: Int) {
+        if row == recipes.count - 1 {
+            intractor.loadNextPage(for: currentTerm)
+        }
+    }
+    
+    func imageFor(row: Int) -> UIImage? {
+        let url = recipes[row].imageUrl
+        return imagesDict[url]?.image
+    }
+
 }
 
 extension RecipeSearchPresenter: RecipeSearchInteractorOutput {
+    
     func didLoadedRecipes(_ recipes: [Recipe]) {
         self.recipes = recipes
-        
+        configureImages(for: recipes)
         DispatchQueue.main.async {
+            self.view?.hideActivityIndictor()
+            self.view?.update()
+        }
+    }
+    
+    func didLoadedNextPage(_ recipes: [Recipe]) {
+        self.recipes += recipes
+        configureImages(for: recipes)
+        DispatchQueue.main.async {
+            self.view?.hideActivityIndictor()
             self.view?.update()
         }
     }
     
     func errorDidOccured(_ error: Error){
+        view?.hideActivityIndictor()
+    }
     
+    func didLoadedImage(data: Data, for url: URL) {
+        guard recipes.count > 0  else { return }
+        guard let imageIndex = imagesDict[url]?.index else { return }
+        imagesDict[url] = (imageIndex, UIImage(data: data))
+        DispatchQueue.main.async {
+            self.view?.update(row: imageIndex)
+        }
+    }
+    
+    func didStarteLoading(for term: String) {
+        currentTerm = term
+        view?.showActivityIndictor()
     }
 }

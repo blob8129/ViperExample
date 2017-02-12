@@ -6,10 +6,12 @@
 //  Copyright © 2017 test. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol RecipeSearchPresenterInput {
     func searchTermChanged(to term: String)
     func numberOfRowsInSection() -> Int
     func titleFor(row: Int) -> String
+    func willDisplayCellFor(row: Int)
+    func imageFor(row: Int) -> UIImage?
 }

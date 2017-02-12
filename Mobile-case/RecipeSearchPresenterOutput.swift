@@ -11,4 +11,7 @@ import Foundation
 
 protocol RecipeSearchPresenterOutput: class {
     func update()
+    func update(row: Int)
+    func showActivityIndictor()
+    func hideActivityIndictor()
 }

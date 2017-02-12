@@ -10,5 +10,8 @@ import Foundation
 
 protocol RecipeSearchInteractorOutput: class {
     func didLoadedRecipes(_ recipes: [Recipe])
+    func didLoadedNextPage(_ recipes: [Recipe])
     func errorDidOccured(_ error: Error)
+    func didLoadedImage(data: Data, for url: URL)
+    func didStarteLoading(for term: String)
 }

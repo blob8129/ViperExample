@@ -11,7 +11,8 @@ import Foundation
 struct RecipeService {
     
     // Could be loaded from keychain
-    let key = "b549c4c96152e677eb90de4604ca61a2"
+  //  let key = "b549c4c96152e677eb90de4604ca61a2"
+    let key = "3a38554ba7f81a95e201ded1f87968f0"
     
     let networkManager = NetworkManager()
     
@@ -23,6 +24,10 @@ struct RecipeService {
             .with(page: page)
             .url
         
+        networkManager.loadData(url: url, callBack: callBack)
+    }
+    
+    func loadData(url: URL, callBack: @escaping (DataResult) -> ()) {
         networkManager.loadData(url: url, callBack: callBack)
     }
 }
