@@ -14,9 +14,30 @@ final class RecipeSearchPresenter {
     
     weak var view: RecipeSearchPresenterOutput?
     fileprivate let intractor: RecipeSearchInteractorInput
+    private var timer: Timer?
     
     init(interactor: RecipeSearchInteractorInput) {
         self.intractor = interactor
+    }
+    
+    fileprivate func debounceAndSerch(term: String) {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1.0,
+                                     target: self,
+                                     selector: #selector(searchTermDebounced),
+                                     userInfo: term,
+                                     repeats: false)
+        RunLoop.main.add(timer!, forMode: .commonModes)
+    }
+    
+    @objc func searchTermDebounced(timer: Timer) {
+        guard let userInfo = timer.userInfo,
+            let term = userInfo as? String else {
+            return
+        }
+        print("Timer for \(term)")
+        intractor.loadRecipes(for: term)
+        
     }
 }
 
@@ -25,9 +46,9 @@ extension RecipeSearchPresenter: RecipeSearchPresenterInput {
         guard term != "" else {
             recipes = []
             view?.update()
-            return 
+            return
         }
-        intractor.loadRecipes(for: term)
+        debounceAndSerch(term: term)
     }
     
     func numberOfRowsInSection() -> Int {
