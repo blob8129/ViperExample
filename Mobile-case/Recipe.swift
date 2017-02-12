@@ -47,13 +47,13 @@ extension Recipe: JSONCreatable {
             throw SerializationError.invalid("image_url is not a URL", imageUrlStr)
         }
         
-        guard  let socialRankStr = jsonDict["social_rank"] as? String else {
+        guard  let socialRank = jsonDict["social_rank"] as? Double else {
             throw SerializationError.missing("social_rank")
         }
         
-        guard  let socialRank = Double(socialRankStr) else {
-            throw SerializationError.invalid("image_url is not a number", socialRankStr)
-        }
+//        guard  let socialRank = Double(socialRankStr) else {
+//            throw SerializationError.invalid("image_url is not a number", socialRankStr)
+//        }
     
         self.init(publisher: publisher,
                   title: title,

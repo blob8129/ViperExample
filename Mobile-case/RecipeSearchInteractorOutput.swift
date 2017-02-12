@@ -9,5 +9,6 @@
 import Foundation
 
 protocol RecipeSearchInteractorOutput: class {
-    
+    func didLoadedRecipes(_ recipes: [Recipe])
+    func errorDidOccured(_ error: Error)
 }

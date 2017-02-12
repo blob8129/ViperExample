@@ -39,8 +39,10 @@ struct NetworkManager {
                 ))
                 return
             }
+    
             callBack(DataResult.sucess(data: data, url: url))
         }
+
         task.resume()
     }
     

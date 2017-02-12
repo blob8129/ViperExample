@@ -25,6 +25,7 @@ final class RecipeSearchRouter: StroyboardInstantiatable, Navigatable {
         let interactor = RecipeSearchInteractor()
         let presenter = RecipeSearchPresenter(interactor: interactor)
         interactor.presenter = presenter
+        presenter.view = viewController
         viewController?.presenter = presenter
     }
 

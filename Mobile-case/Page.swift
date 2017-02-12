@@ -26,11 +26,11 @@ extension Page: JSONCreatable {
             throw SerializationError.missing("count")
         }
         
-        guard let recipesDict = jsonDict["recipes"] as? JSONDictonary else {
+        guard let recipesDict = jsonDict["recipes"] as? JSONArray else {
             throw SerializationError.missing("recipes")
         }
         
-        let recipes =  recipesDict.map { Recipie.init }
+        let recipes = try recipesDict.map { try Recipe(json: $0) }
 
         self.init(count: count,
                   recipes: recipes)

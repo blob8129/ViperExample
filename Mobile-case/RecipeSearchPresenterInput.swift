@@ -10,4 +10,6 @@ import Foundation
 
 protocol RecipeSearchPresenterInput {
     func searchTermChanged(to term: String)
+    func numberOfRowsInSection() -> Int
+    func titleFor(row: Int) -> String
 }

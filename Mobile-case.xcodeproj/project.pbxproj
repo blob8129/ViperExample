@@ -36,6 +36,7 @@
 		CEE663001E500B3300C9913A /* SerializationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662FF1E500B3300C9913A /* SerializationError.swift */; };
 		CEE663041E500D3100C9913A /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE663031E500D3100C9913A /* Page.swift */; };
 		CEE663061E500E2400C9913A /* Resourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE663051E500E2300C9913A /* Resourse.swift */; };
+		CEE663081E5016CE00C9913A /* RecipeSearchPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE663071E5016CE00C9913A /* RecipeSearchPresenterOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		CEE662FF1E500B3300C9913A /* SerializationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationError.swift; sourceTree = "<group>"; };
 		CEE663031E500D3100C9913A /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		CEE663051E500E2300C9913A /* Resourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resourse.swift; sourceTree = "<group>"; };
+		CEE663071E5016CE00C9913A /* RecipeSearchPresenterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSearchPresenterOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		CEE6629F1E4D6DBC00C9913A /* Mobile-case */ = {
 			isa = PBXGroup;
 			children = (
+				CEE662C71E4D727800C9913A /* Common */,
 				CEE662D61E4D74B900C9913A /* Application */,
 				CEE662C01E4D6E8900C9913A /* Modules */,
 				CEE662FA1E50097000C9913A /* Model */,
@@ -148,7 +151,6 @@
 		CEE662C01E4D6E8900C9913A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				CEE662C71E4D727800C9913A /* Common */,
 				CEE662C21E4D720800C9913A /* RecipeDetails */,
 				CEE662C11E4D71E200C9913A /* RecipeSearch */,
 			);
@@ -188,6 +190,7 @@
 			children = (
 				CEE662D81E4D7B5100C9913A /* RecipeSearchPresenter.swift */,
 				CEE662DD1E4D7BD000C9913A /* RecipeSearchPresenterInput.swift */,
+				CEE663071E5016CE00C9913A /* RecipeSearchPresenterOutput.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				CEE663041E500D3100C9913A /* Page.swift in Sources */,
 				CEE662CC1E4D72C000C9913A /* ViewControllerTypeProtocol.swift in Sources */,
 				CEE662EB1E4D94E400C9913A /* URLBuilder.swift in Sources */,
+				CEE663081E5016CE00C9913A /* RecipeSearchPresenterOutput.swift in Sources */,
 				CEE662A31E4D6DBC00C9913A /* ViewController.swift in Sources */,
 				CEE662D31E4D73FE00C9913A /* RecipeSearchTVC.swift in Sources */,
 				CEE662D91E4D7B5100C9913A /* RecipeSearchPresenter.swift in Sources */,

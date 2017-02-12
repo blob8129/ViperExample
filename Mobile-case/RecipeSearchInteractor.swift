@@ -10,25 +10,42 @@ import Foundation
 
 
 final class RecipeSearchInteractor {
-    var page = 0
+    var pageNum = 0
     weak var presenter: RecipeSearchInteractorOutput?
     let recipeService = RecipeService()
+    
+    fileprivate func handleRecipeSuccess(data: Data) {
+        do {
+            let page = try Resourse<Page>(data: data).getItem()
+            presenter?.didLoadedRecipes(page.recipes)
+        } catch let error {
+            presenter?.errorDidOccured(error)
+        }
+    }
+    
+    fileprivate func searchForRecipe(term: String, page: Int) {
+        recipeService.searchForRecipe(term: term, page: pageNum) { result in
+            
+            switch result {
+            case .sucess(let data, _):
+                self.handleRecipeSuccess(data: data)
+            case .error(let error):
+                self.presenter?.errorDidOccured(error)
+            }
+        }
+    }
 }
 
 extension RecipeSearchInteractor: RecipeSearchInteractorInput {
     
     func loadRecipes(for term: String) {
-        page = 0
-        recipeService.searchForRecipe(term: term, page: page) { result in
-        
-        }
+        pageNum = 0
+        searchForRecipe(term: term, page: pageNum)
     }
     
     func loadNextPage(for term: String) {
-        page += 1
-        recipeService.searchForRecipe(term: term, page: page) { result in
-
-        }
+        pageNum += 1
+        searchForRecipe(term: term, page: pageNum)
     }
 }
 
