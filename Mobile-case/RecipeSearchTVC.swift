@@ -33,14 +33,8 @@ class RecipeSearchTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setSearch()
-    
-      //  navigationItem.titleView = activityIndicator
-      //  navigationController?.setToolbarHidden(true, animated: true)
-        let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace,
-                                    target: nil,
-                                    action: nil)
-        let item = UIBarButtonItem(customView: activityIndicator)
-        setToolbarItems([space, item, space], animated: false)
+        navigationItem.titleView = activityIndicator
+        navigationController?.setToolbarHidden(true, animated: true)
     }
 }
 
@@ -85,12 +79,10 @@ extension RecipeSearchTVC: RecipeSearchPresenterOutput {
     }
     
     func showActivityIndictor() {
-        navigationController?.setToolbarHidden(false, animated: true)
         activityIndicator.startAnimating()
     }
     
     func hideActivityIndictor() {
-        navigationController?.setToolbarHidden(true, animated: true)
         activityIndicator.stopAnimating()
     }
     

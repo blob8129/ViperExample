@@ -39,4 +39,8 @@ struct RecipeService {
             .url
         networkManager.loadData(url: url, callBack: callBack)
     }
+    
+    func cancel() {
+        networkManager.cancel()
+    }
 }

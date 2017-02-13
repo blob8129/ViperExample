@@ -15,6 +15,8 @@
 		CE40478C1E515F0700789F16 /* RecipeDetailsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40478B1E515F0700789F16 /* RecipeDetailsInteractorInput.swift */; };
 		CE40478E1E515F3D00789F16 /* RecipeDetailsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40478D1E515F3D00789F16 /* RecipeDetailsInteractorOutput.swift */; };
 		CE4047901E5165A100789F16 /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40478F1E5165A100789F16 /* RecipeDetailsViewModel.swift */; };
+		CE4047941E517B8A00789F16 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4047931E517B8A00789F16 /* ConcurrentOperation.swift */; };
+		CE4047961E517C1900789F16 /* DataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4047951E517C1900789F16 /* DataOperation.swift */; };
 		CEE662A11E4D6DBC00C9913A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662A01E4D6DBC00C9913A /* AppDelegate.swift */; };
 		CEE662A31E4D6DBC00C9913A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662A21E4D6DBC00C9913A /* ViewController.swift */; };
 		CEE662A61E4D6DBC00C9913A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE662A41E4D6DBC00C9913A /* Main.storyboard */; };
@@ -69,6 +71,8 @@
 		CE40478B1E515F0700789F16 /* RecipeDetailsInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsInteractorInput.swift; sourceTree = "<group>"; };
 		CE40478D1E515F3D00789F16 /* RecipeDetailsInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsInteractorOutput.swift; sourceTree = "<group>"; };
 		CE40478F1E5165A100789F16 /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
+		CE4047931E517B8A00789F16 /* ConcurrentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
+		CE4047951E517C1900789F16 /* DataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataOperation.swift; sourceTree = "<group>"; };
 		CEE6629D1E4D6DBC00C9913A /* Mobile-case.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile-case.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE662A01E4D6DBC00C9913A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE662A21E4D6DBC00C9913A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,15 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		CE4047921E517B3600789F16 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				CE4047931E517B8A00789F16 /* ConcurrentOperation.swift */,
+				CE4047951E517C1900789F16 /* DataOperation.swift */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
 		CEE662941E4D6DBB00C9913A = {
 			isa = PBXGroup;
 			children = (
@@ -201,8 +214,8 @@
 		CEE662C01E4D6E8900C9913A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				CEE662C21E4D720800C9913A /* RecipeDetails */,
 				CEE662C11E4D71E200C9913A /* RecipeSearch */,
+				CEE662C21E4D720800C9913A /* RecipeDetails */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -269,6 +282,7 @@
 		CEE662C71E4D727800C9913A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CE4047921E517B3600789F16 /* Operations */,
 				CEE662E41E4D93ED00C9913A /* Services */,
 				CEE662C81E4D727F00C9913A /* RouterProtocols */,
 			);
@@ -507,9 +521,11 @@
 				CEE662D31E4D73FE00C9913A /* RecipeSearchTVC.swift in Sources */,
 				CEE662D91E4D7B5100C9913A /* RecipeSearchPresenter.swift in Sources */,
 				CEE662A11E4D6DBC00C9913A /* AppDelegate.swift in Sources */,
+				CE4047941E517B8A00789F16 /* ConcurrentOperation.swift in Sources */,
 				CEE662E31E4D918600C9913A /* RecipeSearchInteractorOutput.swift in Sources */,
 				CEE662F51E4DB13B00C9913A /* RecipeService.swift in Sources */,
 				CE40478E1E515F3D00789F16 /* RecipeDetailsInteractorOutput.swift in Sources */,
+				CE4047961E517C1900789F16 /* DataOperation.swift in Sources */,
 				CEE662D51E4D744200C9913A /* StroyboardInstantiatable.swift in Sources */,
 				CEE662FE1E500A9700C9913A /* JSONCreatable.swift in Sources */,
 				CEE662E11E4D90CD00C9913A /* RecipeSearchInteractorInput.swift in Sources */,

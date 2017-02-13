@@ -20,7 +20,6 @@ class RecipeDetailsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setToolbarHidden(true, animated: false)
         presenter?.viewDidLoad()
     }
 
@@ -34,10 +33,6 @@ class RecipeDetailsVC: UIViewController {
         if let presenter = presenter {
             UIApplication.shared.openURL(presenter.urlForOriginal())
         }
-    }
-
-    deinit {
-        print("RecipeDetailsVC denit")
     }
 }
 

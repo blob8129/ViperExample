@@ -12,4 +12,5 @@ import Foundation
 protocol RecipeSearchInteractorInput {
     func loadRecipes(for term: String)
     func loadNextPage(for term: String)
+    func cancelPrevous()
 }

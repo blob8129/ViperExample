@@ -68,6 +68,12 @@ final class RecipeSearchInteractor {
     fileprivate func imageHandler(data: Data, url: URL) {
         self.presenter?.didLoadedImage(data: data, for: url)
     }
+    
+    func cancelPrevous() {
+        print("cancel")
+        recipeService.cancel()
+        presenter?.didCanceledLoading()
+    }
 }
 
 extension RecipeSearchInteractor: RecipeSearchInteractorInput {

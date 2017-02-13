@@ -14,4 +14,5 @@ protocol RecipeSearchInteractorOutput: class {
     func errorDidOccured(_ error: Error)
     func didLoadedImage(data: Data, for url: URL)
     func didStarteLoading(for term: String)
+    func didCanceledLoading()
 }
