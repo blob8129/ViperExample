@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2BF9A21E514B0C002CF379 /* RecipeById.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2BF9A11E514B0C002CF379 /* RecipeById.swift */; };
+		CE2BF9A61E515A7D002CF379 /* RecipeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2BF9A51E515A7D002CF379 /* RecipeDetailsPresenter.swift */; };
+		CE2BF9A81E515A9D002CF379 /* RecipeDetailsPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2BF9A71E515A9D002CF379 /* RecipeDetailsPresenterInput.swift */; };
+		CE4047881E515B3A00789F16 /* RecipeDetailsPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4047871E515B3A00789F16 /* RecipeDetailsPresenterOutput.swift */; };
+		CE40478A1E515EE700789F16 /* RecipeDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4047891E515EE700789F16 /* RecipeDetailsInteractor.swift */; };
+		CE40478C1E515F0700789F16 /* RecipeDetailsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40478B1E515F0700789F16 /* RecipeDetailsInteractorInput.swift */; };
+		CE40478E1E515F3D00789F16 /* RecipeDetailsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40478D1E515F3D00789F16 /* RecipeDetailsInteractorOutput.swift */; };
+		CE4047901E5165A100789F16 /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40478F1E5165A100789F16 /* RecipeDetailsViewModel.swift */; };
 		CEE662A11E4D6DBC00C9913A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662A01E4D6DBC00C9913A /* AppDelegate.swift */; };
 		CEE662A31E4D6DBC00C9913A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662A21E4D6DBC00C9913A /* ViewController.swift */; };
 		CEE662A61E4D6DBC00C9913A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE662A41E4D6DBC00C9913A /* Main.storyboard */; };
@@ -53,6 +61,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE2BF9A11E514B0C002CF379 /* RecipeById.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeById.swift; sourceTree = "<group>"; };
+		CE2BF9A51E515A7D002CF379 /* RecipeDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsPresenter.swift; sourceTree = "<group>"; };
+		CE2BF9A71E515A9D002CF379 /* RecipeDetailsPresenterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsPresenterInput.swift; sourceTree = "<group>"; };
+		CE4047871E515B3A00789F16 /* RecipeDetailsPresenterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsPresenterOutput.swift; sourceTree = "<group>"; };
+		CE4047891E515EE700789F16 /* RecipeDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsInteractor.swift; sourceTree = "<group>"; };
+		CE40478B1E515F0700789F16 /* RecipeDetailsInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsInteractorInput.swift; sourceTree = "<group>"; };
+		CE40478D1E515F3D00789F16 /* RecipeDetailsInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsInteractorOutput.swift; sourceTree = "<group>"; };
+		CE40478F1E5165A100789F16 /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
 		CEE6629D1E4D6DBC00C9913A /* Mobile-case.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile-case.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE662A01E4D6DBC00C9913A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE662A21E4D6DBC00C9913A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +126,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE2BF9A31E515A37002CF379 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CE2BF9A51E515A7D002CF379 /* RecipeDetailsPresenter.swift */,
+				CE2BF9A71E515A9D002CF379 /* RecipeDetailsPresenterInput.swift */,
+				CE4047871E515B3A00789F16 /* RecipeDetailsPresenterOutput.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		CE2BF9A41E515A3F002CF379 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CE4047891E515EE700789F16 /* RecipeDetailsInteractor.swift */,
+				CE40478B1E515F0700789F16 /* RecipeDetailsInteractorInput.swift */,
+				CE40478D1E515F3D00789F16 /* RecipeDetailsInteractorOutput.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		CE4047911E5165A700789F16 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE40478F1E5165A100789F16 /* RecipeDetailsViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		CEE662941E4D6DBB00C9913A = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				CEE6630E1E512E2C00C9913A /* Router */,
+				CE2BF9A41E515A3F002CF379 /* Interactor */,
+				CE2BF9A31E515A37002CF379 /* Presenter */,
 				CEE663091E512DB500C9913A /* View */,
 			);
 			name = RecipeDetails;
@@ -300,6 +346,7 @@
 				CEE662FB1E50099500C9913A /* Recipe.swift */,
 				CEE663031E500D3100C9913A /* Page.swift */,
 				CEE663051E500E2300C9913A /* Resourse.swift */,
+				CE2BF9A11E514B0C002CF379 /* RecipeById.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -323,6 +370,7 @@
 		CEE663091E512DB500C9913A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE4047911E5165A700789F16 /* ViewModel */,
 				CEE6630A1E512E1B00C9913A /* RecipeDetailsVC.swift */,
 				CEE6630C1E512E2600C9913A /* RecipeDetails.storyboard */,
 			);
@@ -442,6 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4047881E515B3A00789F16 /* RecipeDetailsPresenterOutput.swift in Sources */,
 				CEE662F31E4DAD6900C9913A /* NetworkError.swift in Sources */,
 				CEE662E91E4D941200C9913A /* URLProvider.swift in Sources */,
 				CEE662DC1E4D7B6500C9913A /* RecipeSearchInteractor.swift in Sources */,
@@ -451,6 +500,8 @@
 				CEE663041E500D3100C9913A /* Page.swift in Sources */,
 				CEE662CC1E4D72C000C9913A /* ViewControllerTypeProtocol.swift in Sources */,
 				CEE662EB1E4D94E400C9913A /* URLBuilder.swift in Sources */,
+				CE2BF9A61E515A7D002CF379 /* RecipeDetailsPresenter.swift in Sources */,
+				CE40478A1E515EE700789F16 /* RecipeDetailsInteractor.swift in Sources */,
 				CEE663081E5016CE00C9913A /* RecipeSearchPresenterOutput.swift in Sources */,
 				CEE662A31E4D6DBC00C9913A /* ViewController.swift in Sources */,
 				CEE662D31E4D73FE00C9913A /* RecipeSearchTVC.swift in Sources */,
@@ -458,15 +509,20 @@
 				CEE662A11E4D6DBC00C9913A /* AppDelegate.swift in Sources */,
 				CEE662E31E4D918600C9913A /* RecipeSearchInteractorOutput.swift in Sources */,
 				CEE662F51E4DB13B00C9913A /* RecipeService.swift in Sources */,
+				CE40478E1E515F3D00789F16 /* RecipeDetailsInteractorOutput.swift in Sources */,
 				CEE662D51E4D744200C9913A /* StroyboardInstantiatable.swift in Sources */,
 				CEE662FE1E500A9700C9913A /* JSONCreatable.swift in Sources */,
 				CEE662E11E4D90CD00C9913A /* RecipeSearchInteractorInput.swift in Sources */,
+				CE2BF9A21E514B0C002CF379 /* RecipeById.swift in Sources */,
 				CEE662FC1E50099500C9913A /* Recipe.swift in Sources */,
+				CE4047901E5165A100789F16 /* RecipeDetailsViewModel.swift in Sources */,
 				CEE663001E500B3300C9913A /* SerializationError.swift in Sources */,
 				CEE663101E512E3F00C9913A /* RecipeDetailsRouter.swift in Sources */,
 				CEE662DE1E4D7BD000C9913A /* RecipeSearchPresenterInput.swift in Sources */,
 				CEE663061E500E2400C9913A /* Resourse.swift in Sources */,
 				CEE6630B1E512E1B00C9913A /* RecipeDetailsVC.swift in Sources */,
+				CE2BF9A81E515A9D002CF379 /* RecipeDetailsPresenterInput.swift in Sources */,
+				CE40478C1E515F0700789F16 /* RecipeDetailsInteractorInput.swift in Sources */,
 				CEE662CA1E4D729D00C9913A /* Navigatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

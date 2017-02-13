@@ -30,4 +30,13 @@ struct RecipeService {
     func loadData(url: URL, callBack: @escaping (DataResult) -> ()) {
         networkManager.loadData(url: url, callBack: callBack)
     }
+    
+    func loadRecipeBy(id: String, callBack: @escaping (DataResult) -> ()) {
+        let baseUrl = URLs.getFoodById.getURL()
+        let url = URLBuilder(url: baseUrl)
+            .with(key: key)
+            .with(id: id)
+            .url
+        networkManager.loadData(url: url, callBack: callBack)
+    }
 }

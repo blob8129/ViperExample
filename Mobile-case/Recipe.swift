@@ -10,9 +10,9 @@ import Foundation
 
 struct Recipe {
     let publisher: String
-   // "f2f_url": "http://food2fork.com/view/f5795c",
+    let instructions: URL //"f2f_url": "http://food2fork.com/view/f5795c",
     let title: String
-    //"source_url": "http://www.pillsburybaking.com/recipes/details/706",
+    let original: URL //"source_url": "http://www.pillsburybaking.com/recipes/details/706",
     let recipeId: String //recipe_id
     let imageUrl: URL //image_url
     let socialRank: Double // social_rank
@@ -47,6 +47,22 @@ extension Recipe: JSONCreatable {
             throw SerializationError.invalid("image_url is not a URL", imageUrlStr)
         }
         
+        guard  let instructionsStr = jsonDict["f2f_url"] as? String else {
+            throw SerializationError.missing("f2f_url")
+        }
+        
+        guard let instructionsUrl = URL(string: instructionsStr) else {
+            throw SerializationError.invalid("f2f_url is not a URL", imageUrlStr)
+        }
+        
+        guard  let originalStr = jsonDict["source_url"] as? String else {
+            throw SerializationError.missing("source_url")
+        }
+        
+        guard let originalUrl = URL(string: originalStr) else {
+            throw SerializationError.invalid("source_url is not a URL", imageUrlStr)
+        }
+        
         guard  let socialRank = jsonDict["social_rank"] as? Double else {
             throw SerializationError.missing("social_rank")
         }
@@ -56,7 +72,9 @@ extension Recipe: JSONCreatable {
 //        }
     
         self.init(publisher: publisher,
+                  instructions: instructionsUrl,
                   title: title,
+                  original: originalUrl,
                   recipeId: recipeId,
                   imageUrl: imageUrl,
                   socialRank: socialRank)
