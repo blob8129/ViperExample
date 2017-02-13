@@ -14,4 +14,5 @@ protocol RecipeSearchPresenterInput {
     func titleFor(row: Int) -> String
     func willDisplayCellFor(row: Int)
     func imageFor(row: Int) -> UIImage?
+    func didSelectedRow(at index: Int)
 }

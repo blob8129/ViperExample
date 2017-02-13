@@ -68,6 +68,10 @@ extension RecipeSearchTVC { // UITableView Delegate
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         presenter?.willDisplayCellFor(row: indexPath.row)
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectedRow(at: indexPath.row)
+    }
 }
 
 extension RecipeSearchTVC: RecipeSearchPresenterOutput {

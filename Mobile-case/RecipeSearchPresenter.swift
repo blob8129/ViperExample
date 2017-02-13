@@ -10,17 +10,20 @@ import UIKit
 
 
 final class RecipeSearchPresenter {
+    fileprivate let intractor: RecipeSearchInteractorInput
+    fileprivate let router: RecipeSearchRouter
+    weak var view: RecipeSearchPresenterOutput?
+    
     var recipes = [Recipe]()
     var imagesDict = [URL: (index: Int, image: UIImage?)]()
     
     private let debounceInterval = 1.0
     fileprivate var currentTerm = ""
-    weak var view: RecipeSearchPresenterOutput?
-    fileprivate let intractor: RecipeSearchInteractorInput
     private var timer: Timer?
     
-    init(interactor: RecipeSearchInteractorInput) {
+    init(interactor: RecipeSearchInteractorInput, router: RecipeSearchRouter) {
         self.intractor = interactor
+        self.router = router
     }
     
     fileprivate func debounceAndSerch(term: String) {
@@ -75,6 +78,10 @@ extension RecipeSearchPresenter: RecipeSearchPresenterInput {
     func imageFor(row: Int) -> UIImage? {
         let url = recipes[row].imageUrl
         return imagesDict[url]?.image
+    }
+    
+    func didSelectedRow(at index: Int) {
+        router.navigateToDetails(of: recipes[index])
     }
 
 }

@@ -37,6 +37,9 @@
 		CEE663041E500D3100C9913A /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE663031E500D3100C9913A /* Page.swift */; };
 		CEE663061E500E2400C9913A /* Resourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE663051E500E2300C9913A /* Resourse.swift */; };
 		CEE663081E5016CE00C9913A /* RecipeSearchPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE663071E5016CE00C9913A /* RecipeSearchPresenterOutput.swift */; };
+		CEE6630B1E512E1B00C9913A /* RecipeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6630A1E512E1B00C9913A /* RecipeDetailsVC.swift */; };
+		CEE6630D1E512E2600C9913A /* RecipeDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE6630C1E512E2600C9913A /* RecipeDetails.storyboard */; };
+		CEE663101E512E3F00C9913A /* RecipeDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6630F1E512E3F00C9913A /* RecipeDetailsRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		CEE663031E500D3100C9913A /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		CEE663051E500E2300C9913A /* Resourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resourse.swift; sourceTree = "<group>"; };
 		CEE663071E5016CE00C9913A /* RecipeSearchPresenterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSearchPresenterOutput.swift; sourceTree = "<group>"; };
+		CEE6630A1E512E1B00C9913A /* RecipeDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsVC.swift; sourceTree = "<group>"; };
+		CEE6630C1E512E2600C9913A /* RecipeDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RecipeDetails.storyboard; sourceTree = "<group>"; };
+		CEE6630F1E512E3F00C9913A /* RecipeDetailsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,8 @@
 		CEE662C21E4D720800C9913A /* RecipeDetails */ = {
 			isa = PBXGroup;
 			children = (
+				CEE6630E1E512E2C00C9913A /* Router */,
+				CEE663091E512DB500C9913A /* View */,
 			);
 			name = RecipeDetails;
 			sourceTree = "<group>";
@@ -312,6 +320,23 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+		CEE663091E512DB500C9913A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEE6630A1E512E1B00C9913A /* RecipeDetailsVC.swift */,
+				CEE6630C1E512E2600C9913A /* RecipeDetails.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CEE6630E1E512E2C00C9913A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CEE6630F1E512E3F00C9913A /* RecipeDetailsRouter.swift */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -395,6 +420,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE6630D1E512E2600C9913A /* RecipeDetails.storyboard in Resources */,
 				CEE662D11E4D73DB00C9913A /* RecipeSearch.storyboard in Resources */,
 				CEE662AB1E4D6DBC00C9913A /* LaunchScreen.storyboard in Resources */,
 				CEE662A81E4D6DBC00C9913A /* Assets.xcassets in Resources */,
@@ -437,8 +463,10 @@
 				CEE662E11E4D90CD00C9913A /* RecipeSearchInteractorInput.swift in Sources */,
 				CEE662FC1E50099500C9913A /* Recipe.swift in Sources */,
 				CEE663001E500B3300C9913A /* SerializationError.swift in Sources */,
+				CEE663101E512E3F00C9913A /* RecipeDetailsRouter.swift in Sources */,
 				CEE662DE1E4D7BD000C9913A /* RecipeSearchPresenterInput.swift in Sources */,
 				CEE663061E500E2400C9913A /* Resourse.swift in Sources */,
+				CEE6630B1E512E1B00C9913A /* RecipeDetailsVC.swift in Sources */,
 				CEE662CA1E4D729D00C9913A /* Navigatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

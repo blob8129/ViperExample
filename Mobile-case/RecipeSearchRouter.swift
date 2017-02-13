@@ -21,9 +21,16 @@ final class RecipeSearchRouter: StroyboardInstantiatable, Navigatable {
     let storyboardName = "RecipeSearch"
     let viewControllerStoryboardId = "RecipeSearchTVC"
     
+    func navigateToDetails(of recipe: Recipe) {
+        var detailsRouter = RecipeDetailsRouter(recipe: recipe)
+        detailsRouter.navigationController = navigationController
+        detailsRouter.push()
+    }
+    
     private func assemble() {
         let interactor = RecipeSearchInteractor()
-        let presenter = RecipeSearchPresenter(interactor: interactor)
+        let presenter = RecipeSearchPresenter(interactor: interactor,
+                                              router: self)
         interactor.presenter = presenter
         presenter.view = viewController
         viewController?.presenter = presenter
