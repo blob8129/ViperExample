@@ -10,4 +10,6 @@ import Foundation
 
 protocol RecipeDetailsPresenterInput {
     func viewDidLoad()
+    func urlForOriginal() -> URL
+    func urlForInstructions() -> URL
 }

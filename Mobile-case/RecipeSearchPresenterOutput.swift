@@ -14,4 +14,5 @@ protocol RecipeSearchPresenterOutput: class {
     func update(row: Int)
     func showActivityIndictor()
     func hideActivityIndictor()
+    func show(message: String)
 }

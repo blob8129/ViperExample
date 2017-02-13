@@ -12,4 +12,5 @@ protocol RecipeDetailsPresenterOutput: class {
     func show(ingredients: [String])
     func show(image: UIImage?)
     func configure(for viewModel: RecipeDetailsViewModel)
+    func show(message: String)
 }

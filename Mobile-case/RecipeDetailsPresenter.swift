@@ -35,20 +35,34 @@ extension RecipeDetailsPresenter: RecipeDetailsPresenterInput {
                                                socialRank: "Social rank: \(String(format: "%.2f", recipe.socialRank))")
         view?.configure(for: viewModel)
     }
+    
+    func urlForOriginal() -> URL {
+        return recipe.original
+    }
+    
+    func urlForInstructions() -> URL {
+        return recipe.instructions
+    }
 }
 
 extension RecipeDetailsPresenter: RecipeDetailsInteractorOutput {
     
     func didLoadedById(recipe: RecipeById) {
         DispatchQueue.main.sync {
-            view?.show(ingredients: recipe.ingredients)
+            self.view?.show(ingredients: recipe.ingredients)
         }
     }
     
     func didLoaded(data: Data) {
         let image = UIImage(data: data)
         DispatchQueue.main.sync {
-            view?.show(image: image)
+            self.view?.show(image: image)
+        }
+    }
+    
+    func errorDidOccured(_ error: Error) {
+        DispatchQueue.main.async {
+            self.view?.show(message: error.localizedDescription)
         }
     }
 }

@@ -10,5 +10,6 @@ import Foundation
 
 protocol RecipeDetailsInteractorOutput: class {
     func didLoadedById(recipe: RecipeById)
-    func didLoaded(data: Data) 
+    func didLoaded(data: Data)
+    func errorDidOccured(_ error: Error)
 }

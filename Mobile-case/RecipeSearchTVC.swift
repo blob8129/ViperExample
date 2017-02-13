@@ -93,4 +93,13 @@ extension RecipeSearchTVC: RecipeSearchPresenterOutput {
         navigationController?.setToolbarHidden(true, animated: true)
         activityIndicator.stopAnimating()
     }
+    
+    func show(message: String) {
+        let alert = UIAlertController(title: "Error occured",
+                                      message: message,
+                                      preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
+    }
 }

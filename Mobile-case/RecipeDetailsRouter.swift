@@ -37,4 +37,3 @@ struct RecipeDetailsRouter: StroyboardInstantiatable, Navigatable {
         assemble(context: recipe)
     }
 }
-

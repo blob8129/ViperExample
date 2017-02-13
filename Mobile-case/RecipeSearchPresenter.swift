@@ -83,7 +83,6 @@ extension RecipeSearchPresenter: RecipeSearchPresenterInput {
     func didSelectedRow(at index: Int) {
         router.navigateToDetails(of: recipes[index])
     }
-
 }
 
 extension RecipeSearchPresenter: RecipeSearchInteractorOutput {
@@ -107,7 +106,10 @@ extension RecipeSearchPresenter: RecipeSearchInteractorOutput {
     }
     
     func errorDidOccured(_ error: Error){
-        view?.hideActivityIndictor()
+        DispatchQueue.main.async {
+            self.view?.hideActivityIndictor()
+            self.view?.show(message: error.localizedDescription)
+        }
     }
     
     func didLoadedImage(data: Data, for url: URL) {
