@@ -70,7 +70,6 @@ final class RecipeSearchInteractor {
     }
     
     func cancelPrevous() {
-        print("cancel")
         recipeService.cancel()
         presenter?.didCanceledLoading()
     }

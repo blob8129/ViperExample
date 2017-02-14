@@ -21,8 +21,6 @@ class ConcurrentOperation: Operation {
                 return "isExecuting"
             case .finished:
                 return "isFinished"
-//            case .cancelled:
-//                return "isCancelled"
             }
         }
     }
@@ -51,10 +49,6 @@ class ConcurrentOperation: Operation {
     override var isFinished: Bool {
         return state == .finished
     }
-    
-//    override var isCancelled: Bool {
-//        return state == .cancelled
-//    }
     
     override var isAsynchronous: Bool {
         return true

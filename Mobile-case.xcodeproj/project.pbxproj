@@ -18,8 +18,6 @@
 		CE4047941E517B8A00789F16 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4047931E517B8A00789F16 /* ConcurrentOperation.swift */; };
 		CE4047961E517C1900789F16 /* DataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4047951E517C1900789F16 /* DataOperation.swift */; };
 		CEE662A11E4D6DBC00C9913A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662A01E4D6DBC00C9913A /* AppDelegate.swift */; };
-		CEE662A31E4D6DBC00C9913A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662A21E4D6DBC00C9913A /* ViewController.swift */; };
-		CEE662A61E4D6DBC00C9913A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE662A41E4D6DBC00C9913A /* Main.storyboard */; };
 		CEE662A81E4D6DBC00C9913A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE662A71E4D6DBC00C9913A /* Assets.xcassets */; };
 		CEE662AB1E4D6DBC00C9913A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE662A91E4D6DBC00C9913A /* LaunchScreen.storyboard */; };
 		CEE662B61E4D6DBC00C9913A /* Mobile_caseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE662B51E4D6DBC00C9913A /* Mobile_caseTests.swift */; };
@@ -75,8 +73,6 @@
 		CE4047951E517C1900789F16 /* DataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataOperation.swift; sourceTree = "<group>"; };
 		CEE6629D1E4D6DBC00C9913A /* Mobile-case.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile-case.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE662A01E4D6DBC00C9913A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEE662A21E4D6DBC00C9913A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CEE662A51E4D6DBC00C9913A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEE662A71E4D6DBC00C9913A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE662AA1E4D6DBC00C9913A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE662AC1E4D6DBC00C9913A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -192,8 +188,6 @@
 				CEE662D61E4D74B900C9913A /* Application */,
 				CEE662C01E4D6E8900C9913A /* Modules */,
 				CEE662FA1E50097000C9913A /* Model */,
-				CEE662A21E4D6DBC00C9913A /* ViewController.swift */,
-				CEE662A41E4D6DBC00C9913A /* Main.storyboard */,
 				CEE662A71E4D6DBC00C9913A /* Assets.xcassets */,
 				CEE662A91E4D6DBC00C9913A /* LaunchScreen.storyboard */,
 				CEE662AC1E4D6DBC00C9913A /* Info.plist */,
@@ -486,7 +480,6 @@
 				CEE662D11E4D73DB00C9913A /* RecipeSearch.storyboard in Resources */,
 				CEE662AB1E4D6DBC00C9913A /* LaunchScreen.storyboard in Resources */,
 				CEE662A81E4D6DBC00C9913A /* Assets.xcassets in Resources */,
-				CEE662A61E4D6DBC00C9913A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +510,6 @@
 				CE2BF9A61E515A7D002CF379 /* RecipeDetailsPresenter.swift in Sources */,
 				CE40478A1E515EE700789F16 /* RecipeDetailsInteractor.swift in Sources */,
 				CEE663081E5016CE00C9913A /* RecipeSearchPresenterOutput.swift in Sources */,
-				CEE662A31E4D6DBC00C9913A /* ViewController.swift in Sources */,
 				CEE662D31E4D73FE00C9913A /* RecipeSearchTVC.swift in Sources */,
 				CEE662D91E4D7B5100C9913A /* RecipeSearchPresenter.swift in Sources */,
 				CEE662A11E4D6DBC00C9913A /* AppDelegate.swift in Sources */,
@@ -563,14 +555,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CEE662A41E4D6DBC00C9913A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEE662A51E4D6DBC00C9913A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CEE662A91E4D6DBC00C9913A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

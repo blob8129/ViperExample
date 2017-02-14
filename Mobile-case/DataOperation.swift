@@ -26,6 +26,7 @@ final class DataOperation: ConcurrentOperation {
                 self.callBack(DataResult.error(
                     .unknown
                 ))
+                self.state = .finished
                 return
             }
             
@@ -33,6 +34,7 @@ final class DataOperation: ConcurrentOperation {
                 self.callBack(DataResult.error(
                     .nonHTTPResponse(response: response)
                 ))
+                self.state = .finished
                 return
             }
             
@@ -40,10 +42,12 @@ final class DataOperation: ConcurrentOperation {
                 self.callBack(DataResult.error(
                     .httpRequestFailed(response: httpResponse, data: data)
                 ))
+                self.state = .finished
                 return
             }
             
             self.callBack(DataResult.sucess(data: data, url: self.url))
+            self.state = .finished
         }
         
         task.resume()
