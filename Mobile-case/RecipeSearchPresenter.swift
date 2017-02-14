@@ -54,6 +54,7 @@ final class RecipeSearchPresenter {
 extension RecipeSearchPresenter: RecipeSearchPresenterInput {
     func searchTermChanged(to term: String) {
         intractor.cancelPrevous()
+        imagesDict = [URL: (index: Int, image: UIImage?)]()
         guard term != "" else {
             recipes = []
             view?.update()
@@ -114,8 +115,12 @@ extension RecipeSearchPresenter: RecipeSearchInteractorOutput {
     }
     
     func didLoadedImage(data: Data, for url: URL) {
-        guard recipes.count > 0  else { return }
-        guard let imageIndex = imagesDict[url]?.index else { return }
+        guard recipes.count > 0  else {
+            return
+        }
+        guard let imageIndex = imagesDict[url]?.index else {
+            return
+        }
         imagesDict[url] = (imageIndex, UIImage(data: data))
         DispatchQueue.main.async {
             
