@@ -10,8 +10,13 @@ import UIKit
 
 final class DataOperation: ConcurrentOperation {
     lazy var session = URLSession.shared
-    fileprivate let url: URL
-    fileprivate let callBack: (DataResult) -> ()
+    private let url: URL
+    private let callBack: (DataResult) -> ()
+    
+    init(url: URL, callBack: @escaping (DataResult) -> ()) {
+        self.url = url
+        self.callBack = callBack
+    }
     
     override func main() {
         
@@ -51,10 +56,5 @@ final class DataOperation: ConcurrentOperation {
         }
         
         task.resume()
-    }
-    
-    init(url: URL, callBack: @escaping (DataResult) -> ()) {
-        self.url = url
-        self.callBack = callBack
     }
 }

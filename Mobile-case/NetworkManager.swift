@@ -16,8 +16,12 @@ enum DataResult {
 
 struct NetworkManager {
 
-    let session: URLSession
-    let queue = OperationQueue()
+    private let session: URLSession
+    private let queue = OperationQueue()
+    
+    init(session: URLSession = URLSession.shared) {
+        self.session = session
+    }
     
     func loadData(url: URL, callBack: @escaping (DataResult) -> () ) {
         let dataOperation = DataOperation(url: url, callBack: callBack)
@@ -28,7 +32,4 @@ struct NetworkManager {
         queue.cancelAllOperations()
     }
     
-    init(session: URLSession = URLSession.shared) {
-        self.session = session
-    }
 }

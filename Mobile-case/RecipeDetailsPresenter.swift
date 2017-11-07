@@ -39,7 +39,7 @@ extension RecipeDetailsPresenter: RecipeDetailsPresenterInput {
     func urlForOriginal() -> URL {
         return recipe.original
     }
-    
+
     func urlForInstructions() -> URL {
         return recipe.instructions
     }
