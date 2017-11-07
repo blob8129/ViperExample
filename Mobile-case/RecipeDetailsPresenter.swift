@@ -10,10 +10,10 @@ import UIKit
 
 final class RecipeDetailsPresenter {
     weak var view: RecipeDetailsPresenterOutput?
-    fileprivate let router: RecipeDetailsRouter
-    fileprivate let interactor: RecipeDetailsInteractorInput
+    private let router: RecipeDetailsRouter
+    private let interactor: RecipeDetailsInteractorInput
     
-    fileprivate let recipe: Recipe
+    private let recipe: Recipe
     
     init(recipe: Recipe,
          router: RecipeDetailsRouter,

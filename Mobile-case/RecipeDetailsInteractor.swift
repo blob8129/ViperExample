@@ -11,9 +11,9 @@ import Foundation
 
 final class RecipeDetailsInteractor {
     weak var presenter: RecipeDetailsInteractorOutput?
-    fileprivate let service = RecipeService()
+    private let service = RecipeService()
     
-    fileprivate func hadleSuccess(data: Data) {
+    private func hadleSuccess(data: Data) {
         do {
             let recipieById = try Resourse<RecipeById>(data: data).getItem()
             self.presenter?.didLoadedById(recipe: recipieById)
@@ -24,8 +24,8 @@ final class RecipeDetailsInteractor {
 }
 
 extension RecipeDetailsInteractor: RecipeDetailsInteractorInput {
+    
     func loadRecipeBy(id: String) {
-        
         service.loadRecipeBy(id: id) { result in
             switch result {
             case .sucess(let data, _):

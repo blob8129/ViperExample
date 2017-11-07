@@ -16,7 +16,6 @@ struct Recipe {
     let recipeId: String //recipe_id
     let imageUrl: URL //image_url
     let socialRank: Double // social_rank
-   // "publisher_url": "http://www.pillsburybaking.com"
 }
 
 extension Recipe: JSONCreatable {
@@ -66,10 +65,6 @@ extension Recipe: JSONCreatable {
         guard  let socialRank = jsonDict["social_rank"] as? Double else {
             throw SerializationError.missing("social_rank")
         }
-        
-//        guard  let socialRank = Double(socialRankStr) else {
-//            throw SerializationError.invalid("image_url is not a number", socialRankStr)
-//        }
     
         self.init(publisher: publisher,
                   instructions: instructionsUrl,

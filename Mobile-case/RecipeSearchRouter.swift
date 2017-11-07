@@ -22,10 +22,9 @@ final class RecipeSearchRouter: StroyboardInstantiatable, Navigatable {
     let storyboardName = "RecipeSearch"
     let viewControllerStoryboardId = "RecipeSearchTVC"
     
-    func navigateToDetails(of recipe: Recipe) {
-        var detailsRouter = RecipeDetailsRouter(recipe: recipe)
-        detailsRouter.navigationController = navigationController
-        detailsRouter.push()
+    init() {
+        viewController = instantiate()
+        assemble()
     }
     
     private func assemble() {
@@ -36,9 +35,10 @@ final class RecipeSearchRouter: StroyboardInstantiatable, Navigatable {
         presenter.view = viewController
         viewController?.presenter = presenter
     }
-
-    init() {
-        viewController = instantiate()
-        assemble()
+    
+    func navigateToDetails(of recipe: Recipe) {
+        var detailsRouter = RecipeDetailsRouter(recipe: recipe)
+        detailsRouter.navigationController = navigationController
+        detailsRouter.push()
     }
 }

@@ -22,6 +22,11 @@ struct RecipeDetailsRouter: StroyboardInstantiatable, Navigatable {
     let storyboardName = "RecipeDetails"
     let viewControllerStoryboardId = "RecipeDetailsVC"
     
+    init(recipe: Recipe) {
+        viewController = instantiate()
+        assemble(context: recipe)
+    }
+    
     private func assemble(context: Recipe) {
         let interactor = RecipeDetailsInteractor()
         let presenter = RecipeDetailsPresenter(recipe: context,
@@ -30,10 +35,5 @@ struct RecipeDetailsRouter: StroyboardInstantiatable, Navigatable {
         interactor.presenter = presenter
         presenter.view = viewController
         viewController?.presenter = presenter
-    }
-    
-    init(recipe: Recipe) {
-        viewController = instantiate()
-        assemble(context: recipe)
     }
 }

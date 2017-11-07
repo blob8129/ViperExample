@@ -14,12 +14,19 @@ class RecipeSearchTVC: UITableViewController {
     private var timer: Timer?
 
     private let searchController = UISearchController(searchResultsController: nil)
-    fileprivate let activityIndicator: UIActivityIndicatorView = { indicator in
+    private let activityIndicator: UIActivityIndicatorView = { indicator in
         indicator.color = .red
         indicator.stopAnimating()
         indicator.hidesWhenStopped = true
         return indicator
     }(UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge))
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setSearch()
+        navigationItem.titleView = activityIndicator
+        navigationController?.setToolbarHidden(true, animated: true)
+    }
     
     private func setSearch() {
         searchController.dimsBackgroundDuringPresentation = false
@@ -28,13 +35,6 @@ class RecipeSearchTVC: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.hidesNavigationBarDuringPresentation = false
         tableView.tableHeaderView = searchController.searchBar
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setSearch()
-        navigationItem.titleView = activityIndicator
-        navigationController?.setToolbarHidden(true, animated: true)
     }
 }
 

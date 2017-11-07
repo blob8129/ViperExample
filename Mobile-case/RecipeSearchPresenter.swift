@@ -10,23 +10,37 @@ import UIKit
 
 
 final class RecipeSearchPresenter {
-    fileprivate let intractor: RecipeSearchInteractorInput
-    fileprivate let router: RecipeSearchRouter
+    private let intractor: RecipeSearchInteractorInput
+    private let router: RecipeSearchRouter
     weak var view: RecipeSearchPresenterOutput?
     
     var recipes = [Recipe]()
     var imagesDict = [URL: (index: Int, image: UIImage?)]()
     
     private let debounceInterval = 1.0
-    fileprivate var currentTerm = ""
+    private var currentTerm = ""
     private var timer: Timer?
     
     init(interactor: RecipeSearchInteractorInput, router: RecipeSearchRouter) {
         self.intractor = interactor
         self.router = router
     }
+}
+
+extension RecipeSearchPresenter: RecipeSearchPresenterInput {
     
-    fileprivate func debounceAndSerch(term: String) {
+    func searchTermChanged(to term: String) {
+        intractor.cancelPrevous()
+        imagesDict = [URL: (index: Int, image: UIImage?)]()
+        guard term != "" else {
+            recipes = []
+            view?.update()
+            return
+        }
+        debounceAndSerch(term: term)
+    }
+    
+    private func debounceAndSerch(term: String) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: debounceInterval,
                                      target: self,
@@ -39,28 +53,9 @@ final class RecipeSearchPresenter {
     @objc func searchTermDebounced(timer: Timer) {
         guard let userInfo = timer.userInfo,
             let term = userInfo as? String else {
-            return
+                return
         }
         intractor.loadRecipes(for: term)
-    }
-    
-    fileprivate func configureImages(for recipes: [Recipe]) {
-        self.recipes.enumerated().forEach { offset, recipe in
-            imagesDict[recipe.imageUrl] = (offset, imagesDict[recipe.imageUrl]?.image)
-        }
-    }
-}
-
-extension RecipeSearchPresenter: RecipeSearchPresenterInput {
-    func searchTermChanged(to term: String) {
-        intractor.cancelPrevous()
-        imagesDict = [URL: (index: Int, image: UIImage?)]()
-        guard term != "" else {
-            recipes = []
-            view?.update()
-            return
-        }
-        debounceAndSerch(term: term)
     }
     
     func numberOfRowsInSection() -> Int {
@@ -95,6 +90,12 @@ extension RecipeSearchPresenter: RecipeSearchInteractorOutput {
         DispatchQueue.main.async {
             self.view?.hideActivityIndictor()
             self.view?.update()
+        }
+    }
+    
+    private func configureImages(for recipes: [Recipe]) {
+        self.recipes.enumerated().forEach { offset, recipe in
+            imagesDict[recipe.imageUrl] = (offset, imagesDict[recipe.imageUrl]?.image)
         }
     }
     
