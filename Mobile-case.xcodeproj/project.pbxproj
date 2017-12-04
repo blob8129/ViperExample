@@ -116,46 +116,193 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE1A41CA1FD579C900CC86D4 /* Builder */ = {
+		CE1A41D01FD5845400CC86D4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				CE1A41CB1FD579E300CC86D4 /* RecipeSearchBuilder.swift */,
+				CE1A41D31FD584E100CC86D4 /* Protocols */,
+				CE1A41D21FD584CB00CC86D4 /* Services */,
+				CE1A41D11FD5849300CC86D4 /* Operations */,
 			);
-			name = Builder;
+			path = Common;
 			sourceTree = "<group>";
 		};
-		CE1A41CD1FD57ECA00CC86D4 /* Builder */ = {
-			isa = PBXGroup;
-			children = (
-				CE1A41CE1FD57EFB00CC86D4 /* RecipeDetailsBuilder.swift */,
-			);
-			path = Builder;
-			sourceTree = "<group>";
-		};
-		CE2BF9A31E515A37002CF379 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				CE2BF9A51E515A7D002CF379 /* RecipeDetailsPresenter.swift */,
-				CE40478F1E5165A100789F16 /* RecipeDetailsViewModel.swift */,
-			);
-			name = Presenter;
-			sourceTree = "<group>";
-		};
-		CE2BF9A41E515A3F002CF379 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				CE4047891E515EE700789F16 /* RecipeDetailsInteractor.swift */,
-			);
-			name = Interactor;
-			sourceTree = "<group>";
-		};
-		CE4047921E517B3600789F16 /* Operations */ = {
+		CE1A41D11FD5849300CC86D4 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
 				CE4047931E517B8A00789F16 /* ConcurrentOperation.swift */,
 				CE4047951E517C1900789F16 /* DataOperation.swift */,
 			);
-			name = Operations;
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		CE1A41D21FD584CB00CC86D4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE1A41E61FD5874600CC86D4 /* URL */,
+				CE1A41E51FD5874100CC86D4 /* API */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE1A41D31FD584E100CC86D4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662FD1E500A9700C9913A /* JSONCreatable.swift */,
+				CEE662CB1E4D72C000C9913A /* ViewControllerTypeProtocol.swift */,
+				CEE662C91E4D729D00C9913A /* Navigatable.swift */,
+				CEE662D41E4D744200C9913A /* StroyboardInstantiator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CE1A41D51FD5852200CC86D4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662A01E4D6DBC00C9913A /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		CE1A41D61FD5853400CC86D4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CE1A41D91FD585F500CC86D4 /* RecipeSearch */,
+				CE1A41DF1FD586A200CC86D4 /* RecipeDetails */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CE1A41D81FD5858C00CC86D4 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662FF1E500B3300C9913A /* SerializationError.swift */,
+				CEE662FB1E50099500C9913A /* Recipe.swift */,
+				CEE663031E500D3100C9913A /* Page.swift */,
+				CEE663051E500E2300C9913A /* Resourse.swift */,
+				CE2BF9A11E514B0C002CF379 /* RecipeById.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CE1A41D91FD585F500CC86D4 /* RecipeSearch */ = {
+			isa = PBXGroup;
+			children = (
+				CE1A41C61FD5776100CC86D4 /* RecipeSearchContract.swift */,
+				CE1A41DD1FD5860D00CC86D4 /* Builder */,
+				CE1A41DC1FD5860600CC86D4 /* Router */,
+				CE1A41DB1FD585FF00CC86D4 /* Interactor */,
+				CE1A41DA1FD585F900CC86D4 /* Presenter */,
+				CE1A41DE1FD5861200CC86D4 /* View */,
+			);
+			path = RecipeSearch;
+			sourceTree = "<group>";
+		};
+		CE1A41DA1FD585F900CC86D4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662D81E4D7B5100C9913A /* RecipeSearchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CE1A41DB1FD585FF00CC86D4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662DB1E4D7B6500C9913A /* RecipeSearchInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CE1A41DC1FD5860600CC86D4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662CE1E4D730000C9913A /* RecipeSearchRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CE1A41DD1FD5860D00CC86D4 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				CE1A41CB1FD579E300CC86D4 /* RecipeSearchBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		CE1A41DE1FD5861200CC86D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662D01E4D73DB00C9913A /* RecipeSearch.storyboard */,
+				CEE662D21E4D73FE00C9913A /* RecipeSearchTVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE1A41DF1FD586A200CC86D4 /* RecipeDetails */ = {
+			isa = PBXGroup;
+			children = (
+				CE1A41C81FD5781500CC86D4 /* RecipeDetailsContract.swift */,
+				CE1A41E41FD586BB00CC86D4 /* Builder */,
+				CE1A41E21FD586AF00CC86D4 /* Interactor */,
+				CE1A41E11FD586AA00CC86D4 /* Presenter */,
+				CE1A41E01FD586A600CC86D4 /* View */,
+			);
+			path = RecipeDetails;
+			sourceTree = "<group>";
+		};
+		CE1A41E01FD586A600CC86D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEE6630A1E512E1B00C9913A /* RecipeDetailsVC.swift */,
+				CEE6630C1E512E2600C9913A /* RecipeDetails.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE1A41E11FD586AA00CC86D4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CE2BF9A51E515A7D002CF379 /* RecipeDetailsPresenter.swift */,
+				CE40478F1E5165A100789F16 /* RecipeDetailsViewModel.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CE1A41E21FD586AF00CC86D4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CE4047891E515EE700789F16 /* RecipeDetailsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CE1A41E41FD586BB00CC86D4 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				CE1A41CE1FD57EFB00CC86D4 /* RecipeDetailsBuilder.swift */,
+			);
+			name = Builder;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		CE1A41E51FD5874100CC86D4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662ED1E4D9D7C00C9913A /* NetworkManager.swift */,
+				CEE662F21E4DAD6900C9913A /* NetworkError.swift */,
+				CEE662F41E4DB13B00C9913A /* RecipeService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CE1A41E61FD5874600CC86D4 /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				CEE662EA1E4D94E400C9913A /* URLBuilder.swift */,
+				CEE662E81E4D941200C9913A /* URLProvider.swift */,
+				CEE662E61E4D940900C9913A /* URLs.swift */,
+			);
+			path = URL;
 			sourceTree = "<group>";
 		};
 		CEE662941E4D6DBB00C9913A = {
@@ -179,10 +326,10 @@
 		CEE6629F1E4D6DBC00C9913A /* Mobile-case */ = {
 			isa = PBXGroup;
 			children = (
-				CEE662C71E4D727800C9913A /* Common */,
-				CEE662D61E4D74B900C9913A /* Application */,
-				CEE662C01E4D6E8900C9913A /* Modules */,
-				CEE662FA1E50097000C9913A /* Model */,
+				CE1A41D51FD5852200CC86D4 /* Application */,
+				CE1A41D01FD5845400CC86D4 /* Common */,
+				CE1A41D81FD5858C00CC86D4 /* Entity */,
+				CE1A41D61FD5853400CC86D4 /* Modules */,
 				CEE662A71E4D6DBC00C9913A /* Assets.xcassets */,
 				CEE662A91E4D6DBC00C9913A /* LaunchScreen.storyboard */,
 				CEE662AC1E4D6DBC00C9913A /* Info.plist */,
@@ -200,182 +347,12 @@
 			path = "Mobile-caseTests";
 			sourceTree = "<group>";
 		};
-		CEE662C01E4D6E8900C9913A /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				CEE662C11E4D71E200C9913A /* RecipeSearch */,
-				CEE662C21E4D720800C9913A /* RecipeDetails */,
-			);
-			name = Modules;
-			sourceTree = "<group>";
-		};
-		CEE662C11E4D71E200C9913A /* RecipeSearch */ = {
-			isa = PBXGroup;
-			children = (
-				CE1A41C61FD5776100CC86D4 /* RecipeSearchContract.swift */,
-				CE1A41CA1FD579C900CC86D4 /* Builder */,
-				CEE662C61E4D722C00C9913A /* Router */,
-				CEE662C31E4D721500C9913A /* Interactor */,
-				CEE662C41E4D721C00C9913A /* Presenter */,
-				CEE662C51E4D722100C9913A /* View */,
-			);
-			name = RecipeSearch;
-			sourceTree = "<group>";
-		};
-		CEE662C21E4D720800C9913A /* RecipeDetails */ = {
-			isa = PBXGroup;
-			children = (
-				CE1A41C81FD5781500CC86D4 /* RecipeDetailsContract.swift */,
-				CE1A41CD1FD57ECA00CC86D4 /* Builder */,
-				CE2BF9A41E515A3F002CF379 /* Interactor */,
-				CE2BF9A31E515A37002CF379 /* Presenter */,
-				CEE663091E512DB500C9913A /* View */,
-			);
-			name = RecipeDetails;
-			sourceTree = "<group>";
-		};
-		CEE662C31E4D721500C9913A /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				CEE662DB1E4D7B6500C9913A /* RecipeSearchInteractor.swift */,
-			);
-			name = Interactor;
-			sourceTree = "<group>";
-		};
-		CEE662C41E4D721C00C9913A /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				CEE662D81E4D7B5100C9913A /* RecipeSearchPresenter.swift */,
-			);
-			name = Presenter;
-			sourceTree = "<group>";
-		};
-		CEE662C51E4D722100C9913A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				CEE662D01E4D73DB00C9913A /* RecipeSearch.storyboard */,
-				CEE662D21E4D73FE00C9913A /* RecipeSearchTVC.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		CEE662C61E4D722C00C9913A /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				CEE662CE1E4D730000C9913A /* RecipeSearchRouter.swift */,
-			);
-			name = Router;
-			sourceTree = "<group>";
-		};
-		CEE662C71E4D727800C9913A /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				CE4047921E517B3600789F16 /* Operations */,
-				CEE662E41E4D93ED00C9913A /* Services */,
-				CEE662C81E4D727F00C9913A /* Protocols */,
-			);
-			name = Common;
-			sourceTree = "<group>";
-		};
-		CEE662C81E4D727F00C9913A /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				CEE662CB1E4D72C000C9913A /* ViewControllerTypeProtocol.swift */,
-				CEE662C91E4D729D00C9913A /* Navigatable.swift */,
-				CEE662D41E4D744200C9913A /* StroyboardInstantiator.swift */,
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
-		CEE662D61E4D74B900C9913A /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				CEE662A01E4D6DBC00C9913A /* AppDelegate.swift */,
-			);
-			name = Application;
-			sourceTree = "<group>";
-		};
-		CEE662E41E4D93ED00C9913A /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				CEE662EC1E4D9AE300C9913A /* API */,
-				CEE662E51E4D93FE00C9913A /* URL */,
-			);
-			name = Services;
-			sourceTree = "<group>";
-		};
-		CEE662E51E4D93FE00C9913A /* URL */ = {
-			isa = PBXGroup;
-			children = (
-				CEE662EA1E4D94E400C9913A /* URLBuilder.swift */,
-				CEE662E81E4D941200C9913A /* URLProvider.swift */,
-				CEE662E61E4D940900C9913A /* URLs.swift */,
-			);
-			name = URL;
-			sourceTree = "<group>";
-		};
-		CEE662EC1E4D9AE300C9913A /* API */ = {
-			isa = PBXGroup;
-			children = (
-				CEE662F61E4DB14A00C9913A /* Errors */,
-				CEE662ED1E4D9D7C00C9913A /* NetworkManager.swift */,
-				CEE662F41E4DB13B00C9913A /* RecipeService.swift */,
-			);
-			name = API;
-			sourceTree = "<group>";
-		};
 		CEE662EF1E4DA22800C9913A /* Mock */ = {
 			isa = PBXGroup;
 			children = (
 				CEE662F01E4DA25A00C9913A /* URLSessionMock.swift */,
 			);
 			name = Mock;
-			sourceTree = "<group>";
-		};
-		CEE662F61E4DB14A00C9913A /* Errors */ = {
-			isa = PBXGroup;
-			children = (
-				CEE662F21E4DAD6900C9913A /* NetworkError.swift */,
-			);
-			name = Errors;
-			sourceTree = "<group>";
-		};
-		CEE662FA1E50097000C9913A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				CEE663021E500B7D00C9913A /* Protocols */,
-				CEE663011E500B6F00C9913A /* Errors */,
-				CEE662FB1E50099500C9913A /* Recipe.swift */,
-				CEE663031E500D3100C9913A /* Page.swift */,
-				CEE663051E500E2300C9913A /* Resourse.swift */,
-				CE2BF9A11E514B0C002CF379 /* RecipeById.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		CEE663011E500B6F00C9913A /* Errors */ = {
-			isa = PBXGroup;
-			children = (
-				CEE662FF1E500B3300C9913A /* SerializationError.swift */,
-			);
-			name = Errors;
-			sourceTree = "<group>";
-		};
-		CEE663021E500B7D00C9913A /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				CEE662FD1E500A9700C9913A /* JSONCreatable.swift */,
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
-		CEE663091E512DB500C9913A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				CEE6630A1E512E1B00C9913A /* RecipeDetailsVC.swift */,
-				CEE6630C1E512E2600C9913A /* RecipeDetails.storyboard */,
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
