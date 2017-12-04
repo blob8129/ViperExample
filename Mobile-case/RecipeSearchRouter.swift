@@ -9,7 +9,7 @@
 import UIKit
 
 
-final class RecipeSearchRouter: StroyboardInstantiatable, Navigatable {
+final class RecipeSearchRouter: Navigatable {
     
     // View Controller Type Protocol
     typealias ViewControllerType = RecipeSearchTVC
@@ -17,28 +17,9 @@ final class RecipeSearchRouter: StroyboardInstantiatable, Navigatable {
     // MARK: Navigatable
     weak var viewController: ViewControllerType?
     weak var navigationController: UINavigationController?
-    
-    // MARK: Stroyboard Instantiatable
-    let storyboardName = "RecipeSearch"
-    let viewControllerStoryboardId = "RecipeSearchTVC"
-    
-    init() {
-        viewController = instantiate()
-        assemble()
-    }
-    
-    private func assemble() {
-        let interactor = RecipeSearchInteractor()
-        let presenter = RecipeSearchPresenter(interactor: interactor,
-                                              router: self)
-        interactor.presenter = presenter
-        presenter.view = viewController
-        viewController?.presenter = presenter
-    }
-    
+
     func navigateToDetails(of recipe: Recipe) {
-        var detailsRouter = RecipeDetailsRouter(recipe: recipe)
-        detailsRouter.navigationController = navigationController
-        detailsRouter.push()
+        let vc = RecipeDetailsBuilder().build(recipe: recipe)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -116,15 +116,11 @@ extension RecipeSearchPresenter: RecipeSearchInteractorOutput {
     }
     
     func didLoadedImage(data: Data, for url: URL) {
-        guard recipes.count > 0  else {
-            return
-        }
-        guard let imageIndex = imagesDict[url]?.index else {
-            return
-        }
+        guard recipes.count > 0  else { return }
+        guard let imageIndex = imagesDict[url]?.index else { return }
+        
         imagesDict[url] = (imageIndex, UIImage(data: data))
         DispatchQueue.main.async {
-            
             self.view?.update(row: imageIndex)
         }
     }

@@ -17,10 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         let rootNavigationController = UINavigationController()
-        let recipeSearchRouter = RecipeSearchRouter()
-        recipeSearchRouter.navigationController = rootNavigationController
-        recipeSearchRouter.push()
-       
+        let vc = RecipeSearchBuilder().build(with: rootNavigationController)
+        rootNavigationController.pushViewController(vc, animated: false)
+
         window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()
         

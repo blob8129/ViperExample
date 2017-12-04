@@ -10,16 +10,13 @@ import UIKit
 
 final class RecipeDetailsPresenter {
     weak var view: RecipeDetailsPresenterOutput?
-    private let router: RecipeDetailsRouter
     private let interactor: RecipeDetailsInteractorInput
     
     private let recipe: Recipe
     
     init(recipe: Recipe,
-         router: RecipeDetailsRouter,
          interactor: RecipeDetailsInteractorInput) {
         self.recipe = recipe
-        self.router = router
         self.interactor = interactor
     }
 }

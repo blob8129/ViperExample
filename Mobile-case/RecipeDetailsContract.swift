@@ -6,7 +6,7 @@
 //  Copyright © 2017 test. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 protocol RecipeDetailsInteractorInput {

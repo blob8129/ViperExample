@@ -51,7 +51,9 @@ final class DataOperation: ConcurrentOperation {
                 return
             }
             
-            self.callBack(DataResult.sucess(data: data, url: self.url))
+            if self.isCancelled == false {
+                self.callBack(DataResult.sucess(data: data, url: self.url))
+            }
             self.state = .finished
         }
         
