@@ -30,6 +30,7 @@ final class RecipeSearchPresenter {
 extension RecipeSearchPresenter: RecipeSearchPresenterInput {
     
     func searchTermChanged(to term: String) {
+        guard term != currentTerm else { return }
         intractor.cancelPrevous()
         imagesDict = [URL: (index: Int, image: UIImage?)]()
         guard term != "" else {
@@ -55,6 +56,7 @@ extension RecipeSearchPresenter: RecipeSearchPresenterInput {
             let term = userInfo as? String else {
                 return
         }
+        
         intractor.loadRecipes(for: term)
     }
     
